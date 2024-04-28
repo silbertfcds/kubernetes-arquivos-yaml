@@ -19,11 +19,11 @@ spec:
       - name: redis
       image: redis:alpine
       ports:
-      - name: redis
-        containerPort: 6379
+      - containerPort: 6379
+        name: redis
       volumeMounts:
-      - name: redis-data
-        mountPath: /data
+      - mountPath: /data
+        name: redis-data
       volumes:
       - name: redis-data
         emptyDir: {}
